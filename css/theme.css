@@ -1,0 +1,197 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica", sans-serif;
+    background: #222225;
+}
+body::-webkit-scrollbar-track
+{
+	background-color: #203647;
+}
+
+body::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #007CC7;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #007CC7;
+}
+
+
+header{
+    position: fixed;
+    background: #202020;
+    padding: 20px;
+    width: 100%;
+    height: 30px;   
+}
+
+.left_area h3{
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900;
+
+}
+
+.left_area span{
+    color: #ffdf6c;
+}
+
+.logout_btn{
+    padding: 5px;
+    background: #ffdf6c;
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: background;
+}
+
+.logout_btn:hover{
+    background-color: #fff020;
+}
+
+.sidebar{
+    background: #191919;
+    margin-top: 70px;
+    padding-top: 30px;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    transition: 0.5s;
+    transition-property: left;
+    overflow-y:scroll;
+}
+
+.sidebar .profile_image{
+    width: 200px;
+    height: 150px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+
+}
+
+.sidebar h4{
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar .side-btn {
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left:  40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+}
+.sidebar::-webkit-scrollbar-track
+{
+	background-color: #203647;
+}
+
+.sidebar::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #007CC7;
+}
+
+.sidebar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #007CC7;
+}
+
+.sidebar span::-moz-selection {
+    background: transparent;
+}
+.sidebar span::selection {
+    background: transparent;
+ }
+
+.sidebar .side-btn:hover{
+    background: #ffdf6c;
+    cursor: pointer;
+}
+
+.sidebar i{
+    padding-right: 10px;
+}
+
+label #sidebar_btn{
+    z-index: 1;
+    color: #fff;
+    position: fixed;
+    cursor: pointer;
+    left: 300px;
+    font-size: 20px;
+    margin: 5px 0;
+    transition: 0.5s;
+    transition-property: color;
+}
+
+label #sidebar_btn:hover{
+    color: #ffdf6c;
+}
+
+#check:checked ~ .sidebar{
+    left: -190px;
+}
+
+#check:checked ~ .sidebar a span{
+    display: none;
+
+}
+
+#check:checked ~ .sidebar a{
+    transition-property: background;
+    font-size: 20px;
+    margin-left: 170px;
+    width: 80px;
+    transition: 0.5s;
+}
+
+
+.content {
+    margin-left: 250px;
+    background: #222225;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+#check:checked ~ .content{
+    margin-left: 60px;
+
+}
+
+#check{
+    display: none;
+}
+
+.pages {
+    padding: 50px;
+    height: 100%;
+    text-align: center;
+    background: #222225;
+    transition: 0.5s;
+}
+
+.pages h1{
+    color: #fff;
+}

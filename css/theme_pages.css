@@ -1,0 +1,667 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
+.page{
+    display: none;
+}
+
+/*----------------------------------------------Proxy Btn-----------------------------------------------------------*/
+.btn-free-froxy input[type="checkbox"] {
+    visibility:hidden;
+    position:relative;
+    font:inherit;
+    color:inherit;
+    margin:1em;
+    cursor:pointer;
+}
+.btn-free-froxy input[type="checkbox"]:before,
+.btn-free-froxy input[type="checkbox"]:after {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  visibility:visible;
+  width:2em;
+  height:2em;
+  box-sizing:border-box;
+}
+
+.btn-free-froxy input[type="checkbox"]:before {
+    border-radius:1em;
+    border:3px solid #f0f0f0;
+    transition:border 0.1s ease-out;
+  }
+
+.btn-free-froxy input[type="checkbox"].green:before {border-color:#96d100;}
+.btn-free-froxy input[type="checkbox"]:after {
+    content:"✓";
+    text-align:center;
+    line-height:2em;
+    font-weight:bolder;
+    overflow:hidden;
+    opacity:0;
+    transition:opacity 0.1s ease-in;
+  }
+
+.btn-free-froxy input[type="checkbox"]:checked:after {opacity:1;}
+
+
+
+/*----------------------------------------------Token Info-----------------------------------------------------------*/
+#token_info span{
+    color: #ffdf6c;
+    font-weight: 900;
+}
+
+#token_info input[type = "text"] {
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+#token_info input[type = "text"]:focus{
+    width: 500px;
+    border-color: #2ecc71;
+}
+#token_info input[type = "submit"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+#token_info input[type = "submit"]:hover{
+    background: #2ecc71;
+}
+#token_info #token_info_content h1{
+    color: rgb(55, 255, 0);
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+#token_info #token_info_content h2{
+    color: #fd2727;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+#token_info #token_info_content p{
+    width: 50%;
+    border:0;
+    background: none;
+    display: block;
+    margin: 13px auto;
+    text-align: center;
+    border: 2px solid #ffdf6c;
+    padding: 14px 20px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+#token_info #token_info_content p:hover{
+    border-color: #2ecc71;
+}
+
+/*----------------------------------------------Glitcher-----------------------------------------------------------*/
+#token_glicher span{
+    color: #ffdf6c;
+    font-weight: 900;
+}
+
+#token_glicher input[type = "text"] {
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+#token_glicher input[type = "text"]:focus{
+    width: 500px;
+    border-color: #2ecc71;
+}
+#token_glicher input[type = "submit"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.glitch-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.glitch {
+    color: #ffdf6c;
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: upercase;
+    position: relative;
+    display: inline-block;
+}
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #222225
+}
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #49FC00;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #b300fc;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+@-webkit-keyframes glitch-anim {
+0% {
+    clip: rect(95px, 9999px, 121px, 0);
+}
+4.166666666666666% {
+    clip: rect(61px, 9999px, 22px, 0);
+}
+8.333333333333332% {
+    clip: rect(116px, 9999px, 138px, 0);
+}
+12.5% {
+    clip: rect(101px, 9999px, 102px, 0);
+}
+16.666666666666664% {
+    clip: rect(107px, 9999px, 118px, 0);
+}
+20.833333333333336% {
+    clip: rect(4px, 9999px, 52px, 0);
+}
+25% {
+    clip: rect(74px, 9999px, 83px, 0);
+}
+29.166666666666668% {
+    clip: rect(57px, 9999px, 51px, 0);
+}
+33.33333333333333% {
+    clip: rect(95px, 9999px, 49px, 0);
+}
+37.5% {
+    clip: rect(46px, 9999px, 17px, 0);
+}
+41.66666666666667% {
+    clip: rect(32px, 9999px, 130px, 0);
+}
+45.83333333333333% {
+    clip: rect(63px, 9999px, 24px, 0);
+}
+50% {
+    clip: rect(28px, 9999px, 26px, 0);
+}
+54.166666666666664% {
+    clip: rect(114px, 9999px, 103px, 0);
+}
+58.333333333333336% {
+    clip: rect(13px, 9999px, 145px, 0);
+}
+62.5% {
+    clip: rect(76px, 9999px, 12px, 0);
+}
+66.66666666666666% {
+    clip: rect(87px, 9999px, 149px, 0);
+}
+70.83333333333334% {
+    clip: rect(92px, 9999px, 79px, 0);
+}
+75% {
+    clip: rect(3px, 9999px, 133px, 0);
+}
+79.16666666666666% {
+    clip: rect(75px, 9999px, 66px, 0);
+}
+83.33333333333334% {
+    clip: rect(68px, 9999px, 142px, 0);
+}
+87.5% {
+    clip: rect(57px, 9999px, 145px, 0);
+}
+91.66666666666666% {
+    clip: rect(128px, 9999px, 49px, 0);
+}
+95.83333333333334% {
+    clip: rect(27px, 9999px, 144px, 0);
+}
+100% {
+    clip: rect(83px, 9999px, 84px, 0);
+}
+}
+@keyframes glitch-anim {
+0% {
+    clip: rect(95px, 9999px, 121px, 0);
+}
+4.166666666666666% {
+    clip: rect(61px, 9999px, 22px, 0);
+}
+8.333333333333332% {
+    clip: rect(116px, 9999px, 138px, 0);
+}
+12.5% {
+    clip: rect(101px, 9999px, 102px, 0);
+}
+16.666666666666664% {
+    clip: rect(107px, 9999px, 118px, 0);
+}
+20.833333333333336% {
+    clip: rect(4px, 9999px, 52px, 0);
+}
+25% {
+    clip: rect(74px, 9999px, 83px, 0);
+}
+29.166666666666668% {
+    clip: rect(57px, 9999px, 51px, 0);
+}
+33.33333333333333% {
+    clip: rect(95px, 9999px, 49px, 0);
+}
+37.5% {
+    clip: rect(46px, 9999px, 17px, 0);
+}
+41.66666666666667% {
+    clip: rect(32px, 9999px, 130px, 0);
+}
+45.83333333333333% {
+    clip: rect(63px, 9999px, 24px, 0);
+}
+50% {
+    clip: rect(28px, 9999px, 26px, 0);
+}
+54.166666666666664% {
+    clip: rect(114px, 9999px, 103px, 0);
+}
+58.333333333333336% {
+    clip: rect(13px, 9999px, 145px, 0);
+}
+62.5% {
+    clip: rect(76px, 9999px, 12px, 0);
+}
+66.66666666666666% {
+    clip: rect(87px, 9999px, 149px, 0);
+}
+70.83333333333334% {
+    clip: rect(92px, 9999px, 79px, 0);
+}
+75% {
+    clip: rect(3px, 9999px, 133px, 0);
+}
+79.16666666666666% {
+    clip: rect(75px, 9999px, 66px, 0);
+}
+83.33333333333334% {
+    clip: rect(68px, 9999px, 142px, 0);
+}
+87.5% {
+    clip: rect(57px, 9999px, 145px, 0);
+}
+91.66666666666666% {
+    clip: rect(128px, 9999px, 49px, 0);
+}
+95.83333333333334% {
+    clip: rect(27px, 9999px, 144px, 0);
+}
+100% {
+    clip: rect(83px, 9999px, 84px, 0);
+}
+}
+@-webkit-keyframes glitch-anim-2 {
+6.666666666666667% {
+    clip: rect(63px, 9999px, 71px, 0);
+}
+10% {
+    clip: rect(0px, 9999px, 46px, 0);
+}
+13.333333333333334% {
+    clip: rect(109px, 9999px, 143px, 0);
+}
+16.666666666666664% {
+    clip: rect(104px, 9999px, 135px, 0);
+}
+20% {
+    clip: rect(92px, 9999px, 101px, 0);
+}
+23.333333333333332% {
+    clip: rect(3px, 9999px, 40px, 0);
+}
+26.666666666666668% {
+    clip: rect(89px, 9999px, 131px, 0);
+}
+30% {
+    clip: rect(50px, 9999px, 139px, 0);
+}
+33.33333333333333% {
+    clip: rect(108px, 9999px, 21px, 0);
+}
+36.666666666666664% {
+    clip: rect(145px, 9999px, 19px, 0);
+}
+40% {
+    clip: rect(41px, 9999px, 140px, 0);
+}
+43.333333333333336% {
+    clip: rect(112px, 9999px, 100px, 0);
+}
+46.666666666666664% {
+    clip: rect(23px, 9999px, 131px, 0);
+}
+50% {
+    clip: rect(46px, 9999px, 74px, 0);
+}
+53.333333333333336% {
+    clip: rect(8px, 9999px, 86px, 0);
+}
+56.666666666666664% {
+    clip: rect(127px, 9999px, 23px, 0);
+}
+60% {
+    clip: rect(50px, 9999px, 92px, 0);
+}
+63.33333333333333% {
+    clip: rect(18px, 9999px, 71px, 0);
+}
+66.66666666666666% {
+    clip: rect(35px, 9999px, 53px, 0);
+}
+70% {
+    clip: rect(92px, 9999px, 16px, 0);
+}
+73.33333333333333% {
+    clip: rect(34px, 9999px, 117px, 0);
+}
+76.66666666666667% {
+    clip: rect(65px, 9999px, 17px, 0);
+}
+80% {
+    clip: rect(137px, 9999px, 74px, 0);
+}
+83.33333333333334% {
+    clip: rect(94px, 9999px, 42px, 0);
+}
+86.66666666666667% {
+    clip: rect(73px, 9999px, 119px, 0);
+}
+90% {
+    clip: rect(38px, 9999px, 101px, 0);
+}
+93.33333333333333% {
+    clip: rect(74px, 9999px, 56px, 0);
+}
+96.66666666666667% {
+    clip: rect(38px, 9999px, 123px, 0);
+}
+100% {
+    clip: rect(2px, 9999px, 54px, 0);
+}
+}
+@keyframes glitch-anim-2 {
+6.666666666666667% {
+    clip: rect(63px, 9999px, 71px, 0);
+}
+10% {
+    clip: rect(0px, 9999px, 46px, 0);
+}
+13.333333333333334% {
+    clip: rect(109px, 9999px, 143px, 0);
+}
+16.666666666666664% {
+    clip: rect(104px, 9999px, 135px, 0);
+}
+20% {
+    clip: rect(92px, 9999px, 101px, 0);
+}
+23.333333333333332% {
+    clip: rect(3px, 9999px, 40px, 0);
+}
+26.666666666666668% {
+    clip: rect(89px, 9999px, 131px, 0);
+}
+30% {
+    clip: rect(50px, 9999px, 139px, 0);
+}
+33.33333333333333% {
+    clip: rect(108px, 9999px, 21px, 0);
+}
+36.666666666666664% {
+    clip: rect(145px, 9999px, 19px, 0);
+}
+40% {
+    clip: rect(41px, 9999px, 140px, 0);
+}
+43.333333333333336% {
+    clip: rect(112px, 9999px, 100px, 0);
+}
+46.666666666666664% {
+    clip: rect(23px, 9999px, 131px, 0);
+}
+50% {
+    clip: rect(46px, 9999px, 74px, 0);
+}
+53.333333333333336% {
+    clip: rect(8px, 9999px, 86px, 0);
+}
+56.666666666666664% {
+    clip: rect(127px, 9999px, 23px, 0);
+}
+60% {
+    clip: rect(50px, 9999px, 92px, 0);
+}
+63.33333333333333% {
+    clip: rect(18px, 9999px, 71px, 0);
+}
+66.66666666666666% {
+    clip: rect(35px, 9999px, 53px, 0);
+}
+70% {
+    clip: rect(92px, 9999px, 16px, 0);
+}
+73.33333333333333% {
+    clip: rect(34px, 9999px, 117px, 0);
+}
+76.66666666666667% {
+    clip: rect(65px, 9999px, 17px, 0);
+}
+80% {
+    clip: rect(137px, 9999px, 74px, 0);
+}
+83.33333333333334% {
+    clip: rect(94px, 9999px, 42px, 0);
+}
+86.66666666666667% {
+    clip: rect(73px, 9999px, 119px, 0);
+}
+90% {
+    clip: rect(38px, 9999px, 101px, 0);
+}
+93.33333333333333% {
+    clip: rect(74px, 9999px, 56px, 0);
+}
+96.66666666666667% {
+    clip: rect(38px, 9999px, 123px, 0);
+}
+100% {
+    clip: rect(2px, 9999px, 54px, 0);
+}
+}
+
+/*----------------------------------------------Account Smasher-----------------------------------------------------------*/
+
+#token_smasher span{
+    color: #ffdf6c;
+    font-weight: 900;
+}
+
+#token_smasher input[type = "text"] {
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+#token_smasher input[type = "text"]:focus{
+    width: 500px;
+    border-color: #2ecc71;
+}
+#token_smasher input[type = "submit"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+
+
+
+#token_smasher form {
+  width: 320px;
+  margin: 45px auto;
+}
+
+.group {
+  position: relative;
+  margin: 45px 0;
+}
+
+#token_smasher textarea {
+  resize: none;
+}
+
+#token_smasher textarea {
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 320px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+#token_smasher textarea:focus {
+  outline: none;
+}
+#token_smasher input:focus ~ .bar:before,
+#token_smasher textarea:focus ~ .bar:before {
+  width: 320px;
+}
+#token_smasher textarea::-webkit-scrollbar-track
+{
+	background-color: #203647;
+}
+
+#token_smasher textarea::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #007CC7;
+}
+
+#token_smasher textarea::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #007CC7;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 320px;
+}
+.bar:before {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: #fff;
+  transition: 300ms ease all;
+  left: 0%;
+}
+
+#smasher_content h1{
+    color : #0f0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#smasher_content span{
+    color: rgba(6, 147, 218, 0.796);
+}
+
+#smasher_content p{
+    color: white;
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #c6c6c6;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+#smasher_content {
+    border: 2px solid #7b00ff;
+    border-radius: 24px;
+}

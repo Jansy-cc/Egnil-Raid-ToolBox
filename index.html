@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/marked.min.js"></script>
+    <script src="js/tokens_tool.js"></script>
+    <title>Egnil.js</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/theme_pages.css">
+</head>
+<body>
+    <div id="app">
+        <input type="checkbox" id="check">
+        <header>
+            <label for="check">
+                <i class="fas fa-bars" id = "sidebar_btn"></i>
+            </label>
+            <div class="left_area">
+                <h3>Egnil <span>RTB</span></h3>
+            </div>
+            <div class="rigth_area">
+            
+                <a href="#" class = "logout_btn"></a>
+            </div>
+        </header>
+
+        <div class="sidebar">
+            <div class="bar"></div>
+            <!--
+            <a id = "side-btn-1" class = "side-btn" onclick="show('attack')"><i class="far fa-paper-plane"></i><span>Attack UI</span></a>
+            <a id = "side-btn-2" class = "side-btn" onclick="show('server_smasher')"><i class="fas fa-bomb"></i><span>Server Smasher</span></a>
+            <a id = "side-btn-3" class = "side-btn" onclick="show('checker')"><i class="fas fa-search"></i><span>Token Checker</span></a>
+            -->
+
+            <a id = "side-btn-4" class = "side-btn" onclick="show('token_smasher')"><i class="fas fa-user-alt-slash"></i><span>Account Smasher</span></a>
+            <a id = "side-btn-5" class = "side-btn" onclick="show('token_glicher')"><i class="fas fa-eye-slash"></i><span>Account Glithcer</span></a>
+            <a id = "side-btn-6" class = "side-btn" onclick="show('token_info')"><i class="fas fa-fingerprint"></i><span>Token Info</span></a>
+            <!--
+            <a id = "side-btn-7" class = "side-btn" onclick="show('about')"><i class="fas fa-info-circle"></i><span>About Author</span></a>
+            <a id = "side-btn-7" class = "side-btn" onclick="show('about')"><i class="fab fa-github"></i><span>GitHub Source</span></a>
+            <a id = "side-btn-1" class = "side-btn" onclick="show('attack')"><i class="far fa-paper-plane"></i><span>Attack UI</span></a>
+            <a id = "side-btn-2" class = "side-btn" onclick="show('server_smasher')"><i class="fas fa-bomb"></i><span>Server Smasher</span></a>
+            <a id = "side-btn-3" class = "side-btn" onclick="show('checker')"><i class="fas fa-search"></i><span>Token Checker</span></a>
+            <a id = "side-btn-4" class = "side-btn" onclick="show('token_smasher')"><i class="fas fa-user-alt-slash"></i><span>Account Smasher</span></a>
+            <a id = "side-btn-5" class = "side-btn" onclick="show('glitcher')"><i class="fas fa-eye-slash"></i><span>Account Glithcer</span></a>
+            <a id = "side-btn-6" class = "side-btn" onclick="show('other')"><i class="fas fa-fingerprint"></i><span>Token Info</span></a>
+            <a id = "side-btn-7" class = "side-btn" onclick="show('about')"><i class="fas fa-info-circle"></i><span>About Author</span></a>
+            <a id = "side-btn-7" class = "side-btn" onclick="show('about')"><i class="fab fa-github"></i><span>GitHub Source</span></a>
+            -->
+        </div>
+        <div class="content">
+            <div class="pages">
+                <div class = "page" id="attack">
+
+                </div>
+                <div class = "page" id="server_smasher">
+                    <h1>Content of page 2</h1>
+                </div>
+                <div class = "page" id="checker">
+                    <h1>Content of page 3</h1>
+                </div>
+                <div class = "page" id="token_smasher">
+                    <h1>Account <span>Smasher</span></h1>
+                    <input type="text" placeholder="Input token..." id="token_smasher_token_box" autocomplete="off"><br>
+                    <form>
+                        <textarea id="smasher_guilds_name" rows="1" type="text" placeholder="Guilds Name..." autocomplete="off"></textarea><span class="highlight"></span><span class="bar"></span>
+                    </form>
+                    <form>
+                        <textarea id="smasher_dm_message" rows="7" type="text" placeholder="Message For Mass DM ;)" autocomplete="off"></textarea><span class="highlight"></span><span class="bar"></span>
+                    </form>
+                    <div id = "smasher_content" class = "smasher_content_box" style="display: none;">
+                    </div>
+                    <input id = "token_smasher_btn" type="submit" value="Start" onclick="token_smasher()" >
+
+
+                </div>
+                <div class = "page" id="token_glicher">
+                    <div class="glitch-wrapper">
+                        <h1>Account&nbsp</h1><div class="glitch" data-text="Glitcher">Glitcher</div>
+                    </div>
+                    <input type="text" placeholder="Input token..." id="token_glicher_token_box" autocomplete="off">
+                    <input id = "token_start_btn" type="submit" value="Start" onclick="start_stop_glitch()" >
+                    <input id = "token_glitcher_language_box" type="submit" value="Language: []" onclick="token_glicher()" style="display: inline; cursor: default;" readonly>
+                    <input id = "token_glitcher_theme_box" type="submit" value="Theme: []" onclick="token_glicher()" style="display: inline; cursor: default;" readonly>
+                </div>
+                <div class = "page" id="token_info">
+                    <h1>Token <span>Information</span></h1>
+                    <input type="text" placeholder="Input token..." id="token_info_token_box" autocomplete="off">
+                    <input type="submit" value="Submit" onclick="token_info()">
+                    <div id="token_info_content"></div>                    
+                </div>
+                <div class = "page" id="about">
+                    <h1>Content of page 7</h1>
+                </div>
+        </div>
+        
+    </div>
+    <script>
+        function show(show_id) {
+            let target_id;
+            if (event.srcElement.id == ''){
+                target_id = event.srcElement.parentElement.id;
+            }else{
+                target_id = event.srcElement.id;
+            }
+            for (button of document.querySelectorAll('.side-btn')) {
+                if (target_id == button.id){
+                    button.style.background = 'tomato';
+                    button.style.transitionProperty = null;
+                }else{
+                    button.style.background = null;
+                    button.style.transitionProperty = 'background';
+                }
+            }
+            for (page of document.querySelectorAll('.page')){
+                if (page.id == show_id){
+                    page.style.display='block';
+                }else{
+                    page.style.display='none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
