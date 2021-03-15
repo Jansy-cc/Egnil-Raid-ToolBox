@@ -52,6 +52,10 @@
     font-weight: 900;
 }
 
+#token_info {
+    text-align: center;
+}
+
 #token_info input[type = "text"] {
     border:0;
     background: none;
@@ -92,6 +96,7 @@
     margin: 0;
     text-transform: uppercase;
     font-size: 22px;
+    
     font-weight: 900;
 }
 
@@ -125,6 +130,10 @@
 #token_glicher span{
     color: #ffdf6c;
     font-weight: 900;
+}
+
+#token_glicher{
+    text-align: center;
 }
 
 #token_glicher input[type = "text"] {
@@ -533,6 +542,10 @@
     font-weight: 900;
 }
 
+#token_smasher {
+    text-align: center;
+}
+
 #token_smasher input[type = "text"] {
     border:0;
     background: none;
@@ -574,71 +587,53 @@
   margin: 45px auto;
 }
 
-.group {
-  position: relative;
-  margin: 45px 0;
-}
-
 #token_smasher textarea {
-  resize: none;
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    border: solid #3498db;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+
+    transition: 0.25s;
+    resize: none;
+}
+#token_smasher textarea:focus{
+    border-color: #2ecc71;
 }
 
-#token_smasher textarea {
-  background: none;
-  color: #c6c6c6;
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 320px;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #c6c6c6;
-}
 
-#token_smasher textarea:focus {
-  outline: none;
-}
-#token_smasher input:focus ~ .bar:before,
-#token_smasher textarea:focus ~ .bar:before {
-  width: 320px;
-}
 #token_smasher textarea::-webkit-scrollbar-track
 {
 	background-color: #203647;
+	width: 5px;
 }
 
 #token_smasher textarea::-webkit-scrollbar
 {
 	width: 12px;
+    height: 2px;
 	background-color: #007CC7;
 }
 
 #token_smasher textarea::-webkit-scrollbar-thumb
 {
-	border-radius: 10px;
 	background-color: #007CC7;
-}
-
-.bar {
-  position: relative;
-  display: block;
-  width: 320px;
-}
-.bar:before {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 0px;
-  position: absolute;
-  background: #fff;
-  transition: 300ms ease all;
-  left: 0%;
+    border-radius: 20px;
 }
 
 #smasher_content h1{
     color : #0f0;
     font-family: 'Times New Roman', Times, serif;
 }
+
+#smasher_content h2{
+    color : #f00;
+    font-family: 'Times New Roman', Times, serif;
+}
+
 
 
 #smasher_content span{
@@ -654,14 +649,86 @@
     text-align: center;
     border: 2px solid #c6c6c6;
     padding: 14px 10px;
-    width: 200px;
+    width: 150px;
     outline: none;
     color: white;
-    border-radius: 24px;
+    border-radius: 12px;
     transition: 0.25s;
 }
 
 #smasher_content {
-    border: 2px solid #7b00ff;
+    border: solid #bb00ff;
     border-radius: 24px;
+}
+
+/* --------------------------------Token Checker  --------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#tokens_checker input[type = "submit"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    text-align: center;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+#tokens_checker input[type = "submit"]:hover{
+    background: #2ecc71;
+}
+
+
+#tokens_checker span{
+    color: #ffdf6c;
+    font-weight: 900;
+}
+
+#tokens_checker{
+    text-align: center;
+}
+
+#tokens_checker textarea {
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    border: solid #3498db;
+    padding: 14px 10px;
+    width: 500px;
+    height: 150px;
+    outline: none;
+    color: white;
+
+    transition: 0.25s;
+    resize: none;
+}
+#tokens_checker textarea:focus{
+    width: 500px;
+    border-color: #2ecc71;
+}
+
+
+#tokens_checker textarea::-webkit-scrollbar-track
+{
+	background-color: #203647;
+	width: 5px;
+}
+
+#tokens_checker textarea::-webkit-scrollbar
+{
+	width: 12px;
+    height: 2px;
+	background-color: #007CC7;
+    border-radius: 20px;
+}
+
+#tokens_checker textarea::-webkit-scrollbar-thumb
+{
+	background-color: #007CC7;
+    border-radius: 20px;
 }

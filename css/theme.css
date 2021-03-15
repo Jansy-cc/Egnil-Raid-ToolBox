@@ -184,10 +184,8 @@ label #sidebar_btn:hover{
     display: none;
 }
 
-.pages {
-    padding: 50px;
-    height: 100%;
-    text-align: center;
+.content {
+    padding-top: 50px;
     background: #222225;
     transition: 0.5s;
 }

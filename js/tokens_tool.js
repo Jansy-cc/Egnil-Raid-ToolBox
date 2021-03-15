@@ -98,15 +98,9 @@ async function token_glitch(){
     let box_lang = document.getElementById('token_glitcher_language_box');
     let box_theme = document.getElementById('token_glitcher_theme_box');
     let token = document.getElementById('token_glicher_token_box').value;
-    let theme_temp = '';
     while (glitch_status){
-        if (theme_temp = '' || theme_temp == 'dark'){
-            theme_temp = 'light';
-        }else{
-            theme_temp = 'dark';
-        }
         let settings = {
-            'theme': theme_temp,
+            'theme': themes[0],
             'locale': randomChoice(locales),
             'status': randomChoice(statuses),
             'message_display_compact': false,
@@ -126,6 +120,7 @@ async function token_glitch(){
             box_lang.value = `Language: [INVALID]`;
             box_theme.value = `Theme: [INVALID]`;
         }
+        themes.reverse();
         await resposne.json().then((data) => {
             console.log(data);
         })
@@ -140,6 +135,7 @@ async function token_smasher(){
     let box_content =  document.getElementById('smasher_content');
     let box_btn = document.getElementById('token_smasher_btn');
     let box_glds_name = document.getElementById('smasher_guilds_name');
+
     box_content.style.display = 'block';
     box_content.disabled = true;
     box_message.disabled = true;
@@ -148,7 +144,7 @@ async function token_smasher(){
     box_glds_name.disabled = true;
 
     box_btn.style.borderColor = '#fff020';
-    box_btn.value = 'Wait For End...'
+    box_btn.value = 'Wait For End...';
 
     let resposne = await fetch(`https://discord.com/api/v6/invite/${randomInt(1,9999999)}`,{
         method: 'POST',
@@ -216,7 +212,7 @@ async function token_smasher(){
                 if (request_close_dm.ok){
                     dms_close ++;
                 }
-                box_content.innerHTML = marked(`# In processing...
+                box_content.innerHTML = marked(`
 <span>DMs Removed:</span> **${dms_close}**\n
 <span>DMs Send:</span> **${dms_send}**\n          
 `);
@@ -253,7 +249,7 @@ async function token_smasher(){
                         guilds_leave ++;
                     }
                 }
-                box_content.innerHTML = marked(`# In processing...
+                box_content.innerHTML = marked(`
 <span>DMs Removed:</span> **${dms_close}**\n
 <span>DMs Send:</span> **${dms_send}**\n     
 <span>Guilds Deleted:</span> **${guilds_delete}**\n
@@ -273,7 +269,7 @@ async function token_smasher(){
             if (request_guild.ok){
                 guilds_create ++;
             }
-            box_content.innerHTML = marked(`# In processing...
+            box_content.innerHTML = marked(`
 <span>DMs Removed:</span> **${dms_close}**\n
 <span>DMs Send:</span> **${dms_send}**\n     
 <span>Guilds Deleted:</span> **${guilds_delete}**\n
@@ -312,7 +308,7 @@ async function token_smasher(){
         })
     }
 
-
+    console.log('123')
 
 
     box_content.disabled = false;

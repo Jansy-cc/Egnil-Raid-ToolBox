@@ -33,9 +33,9 @@
             <!--
             <a id = "side-btn-1" class = "side-btn" onclick="show('attack')"><i class="far fa-paper-plane"></i><span>Attack UI</span></a>
             <a id = "side-btn-2" class = "side-btn" onclick="show('server_smasher')"><i class="fas fa-bomb"></i><span>Server Smasher</span></a>
-            <a id = "side-btn-3" class = "side-btn" onclick="show('checker')"><i class="fas fa-search"></i><span>Token Checker</span></a>
+            <a id = "side-btn-3" class = "side-btn" onclick="show('tokens_checker')"><i class="fas fa-search"></i><span>Tokens Checker</span></a>
             -->
-
+            
             <a id = "side-btn-4" class = "side-btn" onclick="show('token_smasher')"><i class="fas fa-user-alt-slash"></i><span>Account Smasher</span></a>
             <a id = "side-btn-5" class = "side-btn" onclick="show('token_glicher')"><i class="fas fa-eye-slash"></i><span>Account Glithcer</span></a>
             <a id = "side-btn-6" class = "side-btn" onclick="show('token_info')"><i class="fas fa-fingerprint"></i><span>Token Info</span></a>
@@ -60,23 +60,25 @@
                 <div class = "page" id="server_smasher">
                     <h1>Content of page 2</h1>
                 </div>
-                <div class = "page" id="checker">
-                    <h1>Content of page 3</h1>
+                <div class = "page" id="tokens_checker">
+                    <h1>Token Checker</h1>
+                    <input id = "temp_value" type="submit" value="Start Checker" onclick="token_smasher()" >
+                    <input id = "temp_value" type="submit" value="Import Tokens From File" onclick="token_smasher()" >
+                    <textarea placeholder="Input tokens..." id="token_glicher_token_box" autocomplete="off"></textarea>
+                    <h1>Valid Tokens</h1>
+                    <textarea placeholder="Input tokens..." id="token_glicher_token_box" autocomplete="off"></textarea>
+                    <input id = "temp_value" type="submit" value="Save To File" onclick="token_smasher()" >
                 </div>
                 <div class = "page" id="token_smasher">
                     <h1>Account <span>Smasher</span></h1>
                     <input type="text" placeholder="Input token..." id="token_smasher_token_box" autocomplete="off"><br>
-                    <form>
-                        <textarea id="smasher_guilds_name" rows="1" type="text" placeholder="Guilds Name..." autocomplete="off"></textarea><span class="highlight"></span><span class="bar"></span>
-                    </form>
-                    <form>
-                        <textarea id="smasher_dm_message" rows="7" type="text" placeholder="Message For Mass DM ;)" autocomplete="off"></textarea><span class="highlight"></span><span class="bar"></span>
-                    </form>
-                    <div id = "smasher_content" class = "smasher_content_box" style="display: none;">
+                    <textarea id="smasher_guilds_name" rows="1" cols="50" type="text" placeholder="Guilds Name..." autocomplete="off"></textarea><span class="highlight"></span><span class="bar"></span>
+                    <textarea id="smasher_dm_message" rows="7" cols="50" type="text" placeholder="Message For Mass DM ;)" autocomplete="off"></textarea><span class="highlight"></span><span class="bar"></span>
+                    <div id = "smasher_content_st">
+                        <div id = "smasher_content" class = "smasher_content_box" style="display: none;"></div>
                     </div>
+                    
                     <input id = "token_smasher_btn" type="submit" value="Start" onclick="token_smasher()" >
-
-
                 </div>
                 <div class = "page" id="token_glicher">
                     <div class="glitch-wrapper">
