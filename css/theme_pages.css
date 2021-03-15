@@ -678,9 +678,7 @@
     cursor: pointer;
 }
 
-#tokens_checker input[type = "submit"]:hover{
-    background: #2ecc71;
-}
+
 
 
 #tokens_checker span{
@@ -699,7 +697,7 @@
     margin: 20px auto;
     border: solid #3498db;
     padding: 14px 10px;
-    width: 500px;
+    width: 550px;
     height: 150px;
     outline: none;
     color: white;
@@ -708,7 +706,6 @@
     resize: none;
 }
 #tokens_checker textarea:focus{
-    width: 500px;
     border-color: #2ecc71;
 }
 

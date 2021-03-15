@@ -320,3 +320,105 @@ async function token_smasher(){
     box_btn.style.borderColor = '#2ecc71';
     box_btn.value = 'Start'
 }
+
+
+async function token_checker(){
+    let box_tokens = document.getElementById('checker_tokens_box');
+    let box_valid_tokens = document.getElementById('checker_checked_box');
+    let btn_start = document.getElementById('checker_start_btn');
+    let btn_load = document.getElementById('checker_load_btn');
+    let btn_save = document.getElementById('checker_save_btn');
+
+    box_tokens.disabled = true;
+    box_valid_tokens.disabled = true;
+    btn_start.disabled = true;
+    btn_load.disabled = true;
+    btn_save.disabled = true;
+
+    box_valid_tokens.value = '';
+
+    btn_save.style.borderColor = '#fff020';
+    btn_save.value = 'Wait For End...';
+    btn_start.style.borderColor = '#fff020';
+    btn_start.value = 'Wait For End...';
+    btn_load.style.borderColor = '#fff020';
+    btn_load.value = 'Wait For End...';
+
+
+    for (token of box_tokens.value.split('\n')){
+        console.log(token);
+        let resposne = await fetch(`https://discord.com/api/v6/invite/${randomInt(1,9999999)}`,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            }
+        })
+        await resposne.json().then((data) => {
+            console.log(data);
+            if (resposne.status != 401 && data.message != "You need to verify your account in order to perform this action."){
+                box_valid_tokens.value += `${token}\n`
+            }
+        });
+    }
+
+    btn_save.style.borderColor = '#2ecc71';
+    btn_save.value = 'Save To File';
+    btn_start.style.borderColor = '#2ecc71';
+    btn_start.value = 'Start Checker';
+    btn_load.style.borderColor = '#2ecc71';
+    btn_load.value = 'Import Tokens From File';
+
+
+    box_tokens.disabled = false;
+    box_valid_tokens.disabled = false;
+    btn_start.disabled = false;
+    btn_load.disabled = false;
+    btn_save.disabled = false;
+
+
+}
+
+function openAttachment() {
+    document.getElementById('attachment').click();
+}
+
+function fileSelected(input){
+    let file = input.files[0];
+    let reader = new FileReader();
+    reader.onload = () =>  {
+        let data = reader.result;
+        let tokens_box = document.getElementById('checker_tokens_box');
+        let sort_tokens = [];
+        data.split('\n').forEach(token =>{
+            token = token.replaceAll(/\s/g,'')
+            if (token.length > 40 && !sort_tokens.includes(token)){
+                sort_tokens.push(token);
+            }
+        })
+        tokens_box.value += '\n' + sort_tokens.join('\n');
+    }
+
+    reader.readAsText(file);
+}
+
+function save_settings() {
+    let data = document.getElementById('checker_checked_box').value;
+
+    let file = new Blob([data], {type: 'text/plain'});
+    let filename = 'tokens.txt';
+    if (window.navigator.msSaveOrOpenBlob)
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else {
+        let a = document.createElement("a"),
+        url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
+}
