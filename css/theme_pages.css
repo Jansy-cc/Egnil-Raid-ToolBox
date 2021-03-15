@@ -579,9 +579,6 @@
     cursor: pointer;
 }
 
-
-
-
 #token_smasher form {
   width: 320px;
   margin: 45px auto;
@@ -623,6 +620,13 @@
 	background-color: #007CC7;
     border-radius: 20px;
 }
+#smasher_content {
+    border: solid #bb00ff;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+}
 
 #smasher_content h1{
     color : #0f0;
@@ -633,8 +637,6 @@
     color : #f00;
     font-family: 'Times New Roman', Times, serif;
 }
-
-
 
 #smasher_content span{
     color: rgba(6, 147, 218, 0.796);
@@ -647,19 +649,22 @@
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #c6c6c6;
+    border: solid #bb00ff;
     padding: 14px 10px;
-    width: 150px;
-    outline: none;
+    width: 200px;
     color: white;
     border-radius: 12px;
     transition: 0.25s;
 }
 
-#smasher_content {
-    border: solid #bb00ff;
-    border-radius: 24px;
+#smasher_content p:hover {
+    border: solid #2ecc71;
 }
+
+#smasher_content textarea:hover {
+    border: solid #2ecc71;
+}
+
 
 /* --------------------------------Token Checker  --------------------------------------------------------------------------------------------------------------------------------------------*/
 

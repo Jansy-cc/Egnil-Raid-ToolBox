@@ -40,6 +40,7 @@
             <a id = "side-btn-5" class = "side-btn" onclick="show('token_glicher')"><i class="fas fa-eye-slash"></i><span>Account Glithcer</span></a>
             <a id = "side-btn-6" class = "side-btn" onclick="show('token_info')"><i class="fas fa-fingerprint"></i><span>Token Info</span></a>
             <!--
+                 style="display: none;"
             <a id = "side-btn-7" class = "side-btn" onclick="show('about')"><i class="fas fa-info-circle"></i><span>About Author</span></a>
             <a id = "side-btn-7" class = "side-btn" onclick="show('about')"><i class="fab fa-github"></i><span>GitHub Source</span></a>
             <a id = "side-btn-1" class = "side-btn" onclick="show('attack')"><i class="far fa-paper-plane"></i><span>Attack UI</span></a>
@@ -63,22 +64,38 @@
                 <div class = "page" id="tokens_checker">
                     <h1>Token Checker</h1>
                     <input id = "checker_start_btn" type="submit" value="Start Checker" onclick="token_checker()" >
-                    <input type="file" class="file" id="attachment" style="display: none;" onchange="fileSelected(this)"/>
-                    <input id = "checker_load_btn" type="submit" value="Import Tokens From File" onclick="openAttachment()" >
+                    <input type="file" class="file" id="attachment" style="display: none;" onchange="tokens_checker_fileSelected(this)"/>
+                    <input id = "checker_load_btn" type="submit" value="Import Tokens From File" onclick="tokens_checker_openAttachment()" >
                     <textarea placeholder="Input tokens..." id="checker_tokens_box" autocomplete="off"></textarea>
                     <h1>Valid Tokens</h1>
                     <textarea placeholder="It`s box for checker result ;)." id="checker_checked_box" autocomplete="off" readonly></textarea>
-                    <input id = "checker_save_btn" type="submit" value="Save To File" onclick="save_settings()" >
+                    <input id = "checker_save_btn" type="submit" value="Save To File" onclick="tokens_checker_save()" >
                 </div>
                 <div class = "page" id="token_smasher">
                     <h1>Account <span>Smasher</span></h1>
                     <input type="text" placeholder="Input token..." id="token_smasher_token_box" autocomplete="off"><br>
-                    <textarea id="smasher_guilds_name" rows="1" cols="50" type="text" placeholder="Guilds Name..." autocomplete="off"></textarea><span class="highlight"></span><span class="bar"></span>
-                    <textarea id="smasher_dm_message" rows="7" cols="50" type="text" placeholder="Message For Mass DM ;)" autocomplete="off"></textarea><span class="highlight"></span><span class="bar"></span>
-                    <div id = "smasher_content_st">
-                        <div id = "smasher_content" class = "smasher_content_box" style="display: none;"></div>
+                    <textarea id="smasher_guilds_name" rows="1" cols="50" type="text" placeholder="Guilds Name..." autocomplete="off"></textarea>
+                    <textarea id="smasher_dm_message" rows="7" cols="50" type="text" placeholder="Message For Mass DM ;)" autocomplete="off"></textarea>
+                    <div id = "smasher_content" class = "smasher_content_box" style= "display: none;">
+
+                        <div id = "smasher_invalid" style= "display: none;">
+                            <h2>Token Invalid</h2>
+                        </div>
+
+                        <div id = "smasher_valid" style= "display: none;">
+                            <p><span>DMs Removed: </span><strong id = "smasher_dms_removed">0</strong></p>
+                            <p><span>DMs Send: </span><strong id = "smasher_dms_send">0</strong></p>
+                            <p><span>Guilds Deleted: </span><strong id = "smasher_guilds_deleted">0</strong></p>
+                            <p id = "test"><span>Guilds Leaved: </span><strong id = "smasher_guilds_leaved">0</strong></p>
+                            <p><span>Guilds Created: </span><strong id = "smasher_guilds_created">0</strong></p>
+                            <p><span>Friends Removed: </span><strong id = "smasher_friends_remmove">0</strong></p>
+                        </div>
+
+
                     </div>
-                    
+
+
+
                     <input id = "token_smasher_btn" type="submit" value="Start" onclick="token_smasher()" >
                 </div>
                 <div class = "page" id="token_glicher">

